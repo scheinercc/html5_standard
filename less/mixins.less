@@ -1,0 +1,186 @@
+//*---------------------------------------------------
+// Project specific mixins
+//-----------------------------------------------------*/
+
+.ie7-inline-block() {
+	display: inline;
+	zoom: 1;
+}
+
+//*---------------------------------------------------
+//    LESS Elements 0.6
+//  ---------------------------------------------------
+//    A set of useful LESS mixins by Dmitry Fadeyev
+//    Special thanks for mixin suggestions to:
+//      Kris Van Herzeele,
+//      Benoit Adam,
+//      Portenart Emile-Victor,
+//      Ryan Faerman
+//
+//    More info at: http://lesselements.com
+//-----------------------------------------------------*/
+//*
+//	updates by Albert Scheiner 11/08/2012
+//	- remove several mixins
+//		where prefexes are not required any more
+//		add links for reference
+//	- add comments for browser support
+//	- remove single out dated prefixed code
+//-----------------------------------------------------*/
+
+
+
+//*
+//	removed mixins - no need for vendor prefixes any more
+//-----------------------------------------------------*/
+
+
+//####
+// @box-shadow
+// http://caniuse.com/#search=box-shadow
+// https://developer.mozilla.org/en-US/docs/CSS/box-shadow
+//####
+
+
+//####
+// @border-radius
+// http://caniuse.com/#search=border-radius
+// https://developer.mozilla.org/en-US/docs/CSS/border-radius
+//####
+
+
+//####
+// @background-clip
+// http://caniuse.com/#search=background-clip
+// https://developer.mozilla.org/en-US/docs/CSS/background-clip
+//####
+
+
+//####
+// @opacity
+// http://caniuse.com/#search=opacity
+//####
+
+
+
+
+//*
+//	mixins
+//-----------------------------------------------------*/
+
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+	border-top: solid 1px @top-color;
+	border-left: solid 1px @left-color;
+	border-right: solid 1px @right-color;
+	border-bottom: solid 1px @bottom-color;
+}
+
+//	@linear-gradient
+//	@w3c: http://www.w3.org/TR/css3-images/#linear-gradients
+//	<linear-gradient> = linear-gradient(
+//		[ [ <angle> | to <side-or-corner> ] ,]? 
+//		<color-stop>[, <color-stop>]+
+//	)
+//	-webkit: Chrome19+ (23+); Safari5.1+ (6+)
+//	-moz:	FF 3.6 - 15
+//	-o: Opera 11.10 - 12.0
+//	-ms: MSIE 10+
+//	w3c: FF 16, Opera 12.5
+.gradient(@dir-w3c: right, @dir-vendor: left, @color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+	background: @color;
+	background: -webkit-linear-gradient(
+		@dir-vendor,
+		@start 0%,
+		@stop 100%
+	);
+	background: -ms-linear-gradient(
+		@dir-vendor,
+		@start 0%,
+		@stop 100%
+	);
+	background: -moz-linear-gradient(
+		@dir-vendor,
+		@start 0%,
+		@stop 100%
+	);
+	background: -o-linear-gradient(
+		@dir-vendor,
+		@start 0%,
+		@stop 100%
+	);
+	background: linear-gradient(
+		to @dir-w3c,
+		@start 0%,
+		@stop 100%
+	);
+}
+
+
+//	@transition
+//	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
+//	-moz:	FF 4 - 15
+//	-o: Opera 12.0
+//	-ms: MSIE 10+
+//	w3c: FF 16, Opera 12.5
+.transition-duration(@duration: 0.2s) {
+	-moz-transition-duration: @duration;
+	-webkit-transition-duration: @duration;
+	-o-transition-duration: @duration;
+	transition-duration: @duration;
+}
+.transition(@duration:0.2s, @ease:ease-out) {
+	-webkit-transition: all @duration @ease;
+	-moz-transition: all @duration @ease;
+	transition: all @duration @ease;
+}
+
+
+//	@transform
+//	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
+//	-moz:	FF 4 - 15
+//	-o: Opera 12.0
+//	-ms: MSIE 9
+//	w3c: FF 16, Opera 12.5, IE 10
+.rotation(@deg:5deg){
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+.scale(@ratio:1.5){
+	-webkit-transform:scale(@ratio);
+	-moz-transform:scale(@ratio);
+	transform:scale(@ratio);
+}
+.translate(@x:0, @y:0) {
+	-moz-transform: translate(@x, @y);
+	-webkit-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
+
+
+//	@column
+//	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
+//	-moz:	FF 3.6+ (16+)
+//	w3c: Opera 12.0, IE 10
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+	-moz-column-width: @colwidth;
+	-moz-column-count: @colcount;
+	-moz-column-gap: @colgap;
+	-moz-column-rule-color: @columnRuleColor;
+	-moz-column-rule-style: @columnRuleStyle;
+	-moz-column-rule-width: @columnRuleWidth;
+	-webkit-column-width: @colwidth;
+	-webkit-column-count: @colcount;
+	-webkit-column-gap: @colgap;
+	-webkit-column-rule-color: @columnRuleColor;
+	-webkit-column-rule-style: @columnRuleStyle;
+	-webkit-column-rule-width: @columnRuleWidth;
+	column-width: @colwidth;
+	column-count: @colcount;
+	column-gap: @colgap;
+	column-rule-color: @columnRuleColor;
+	column-rule-style: @columnRuleStyle;
+	column-rule-width: @columnRuleWidth;
+}
