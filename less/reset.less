@@ -1,43 +1,143 @@
-// based on HTML5 Boilerplate
-// h5bp.com/css
+// based on Reset.less
+// Adapted from Normalize.css http://github.com/necolas/normalize.css
+// ------------------------------------------------------------------------
 
-/*--------------- reset ------------------- */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio, canvas, video { display: inline-block; }
-.lt-ie8 { audio, canvas, video { .ie7-inline-block }}
-audio:not([controls]) { display: none; }
-[hidden] { display: none; }
+// Display in IE6-9 and FF3
+// -------------------------
 
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, button, input, select, textarea { font-family: sans-serif; color: @brand; }
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
 
-a:focus { outline: thin dotted; }
-a:hover, a:active { outline: 0; }
+// Display block in IE6-9 and FF3
+// -------------------------
 
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-svg:not(:root) { overflow: hidden; }
-figure { margin: 0; }
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+.lt-ie8 {
+	audio,
+	canvas,
+	video {
+		display: inline;
+		zoom: 1;
+	}
+}
 
-form { margin: 0; }
-fieldset { border: 0; margin: 0; padding: 0; }
+// Prevents modern browsers from displaying 'audio' without controls
+// -------------------------
 
-label { cursor: pointer; }
-//legend { border: 0; padding: 0; white-space: normal; }
-//.lt-ie8 legend { margin-left: -7px; }
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; }
-.lt-ie8 { button, input, select, textarea { vertical-align: middle; }}
-button, input { line-height: normal; }
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
-.lt-ie8 { button, input[type="button"], input[type="reset"], input[type="submit"] { overflow: visible; }}
-button[disabled], input[disabled] { cursor: default; }
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-textarea { overflow: auto; vertical-align: top; resize: vertical; }
+audio:not([controls]) {
+	display: none;
+}
 
-table { border-collapse: collapse; border-spacing: 0; }
-td { vertical-align: top; }
-/*----------------------------------------- */
-//whitespace needed for line separation in compiled file
+// Base settings
+// -------------------------
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+// Focus states
+a:focus {
+	.tab-focus();
+}
+// Hover & Active
+a:hover,
+a:active {
+	outline: 0;
+}
+
+// Prevents sub and sup affecting line-height in all browsers
+// -------------------------
+
+sub,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+// Img border in a's and image quality
+// -------------------------
+
+img {
+	max-width: 100%; // Make images inherently responsive
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+// Prevent max-width from affecting Google Maps
+#map_canvas img {
+	max-width: none;
+}
+
+// Forms
+// -------------------------
+
+// Font size in all browsers, margin changes, misc consistency
+button,
+input,
+select,
+textarea {
+	margin: 0;
+	font-size: 100%;
+	vertical-align: middle;
+}
+
+button,
+input {
+	line-height: normal; // FF3/4 have !important on line-height in UA stylesheet
+}
+.lt-ie8 {
+	button,
+	input {
+		overflow: visible; // Inner spacing ie IE6/7
+	}
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
+	padding: 0;
+	border: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer; // Cursors on all buttons applied consistently
+	-webkit-appearance: button; // Style clickable inputs in iOS
+}
+input[type="search"] { // Appearance in Safari/Chrome
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
+}
+textarea {
+	overflow: auto; // Remove vertical scrollbar in IE6-9
+	vertical-align: top; // Readability and alignment cross-browser
+}
