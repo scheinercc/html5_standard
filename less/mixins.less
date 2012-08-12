@@ -119,11 +119,14 @@
 	-moz-transition-duration: @duration;
 	-webkit-transition-duration: @duration;
 	-o-transition-duration: @duration;
+	-ms-transition-duration: @duration;
 	transition-duration: @duration;
 }
 .transition(@duration:0.2s, @ease:ease-out) {
 	-webkit-transition: all @duration @ease;
 	-moz-transition: all @duration @ease;
+	-o-transition: all @duration @ease;
+	-ms-transition: all @duration @ease;
 	transition: all @duration @ease;
 }
 
