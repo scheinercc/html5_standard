@@ -74,11 +74,11 @@
 //		[ [ <angle> | to <side-or-corner> ] ,]? 
 //		<color-stop>[, <color-stop>]+
 //	)
+//	w3c: FF 16, Opera 12.5
 //	-webkit: Chrome19+ (23+); Safari5.1+ (6+)
 //	-moz:	FF 3.6 - 15
 //	-o: Opera 11.10 - 12.0
 //	-ms: MSIE 10+
-//	w3c: FF 16, Opera 12.5
 .gradient(@dir-w3c: right, @dir-vendor: left, @color: #F5F5F5, @start: #EEE, @stop: #FFF) {
 	background: @color;
 	background: -webkit-linear-gradient(
@@ -110,11 +110,11 @@
 
 
 //	@transition
+//	w3c: FF 16, Opera 12.5
 //	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
 //	-moz:	FF 4 - 15
 //	-o: Opera 12.0
 //	-ms: MSIE 10+
-//	w3c: FF 16, Opera 12.5
 .transition-duration(@duration: 0.2s) {
 	-webkit-transition-duration: @duration;
 	-moz-transition-duration: @duration;
@@ -132,11 +132,11 @@
 
 
 //	@transform
+//	w3c: FF 16, Opera 12.5, IE 10
 //	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
 //	-moz:	FF 4 - 15
 //	-o: Opera 12.0
 //	-ms: MSIE 9
-//	w3c: FF 16, Opera 12.5, IE 10
 .rotation(@deg:5deg){
 	-webkit-transform: rotate(@deg);
 	-moz-transform: rotate(@deg);
@@ -161,9 +161,9 @@
 
 
 //	@column
+//	w3c: Opera 12.0, IE 10
 //	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
 //	-moz:	FF 3.6+ (16+)
-//	w3c: Opera 12.0, IE 10
 .columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
 	-webkit-column-width: @colwidth;
 	-webkit-column-count: @colcount;
