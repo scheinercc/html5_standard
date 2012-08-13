@@ -103,6 +103,10 @@ textarea {
 }
 /*--------------- grid ------------------- */
 /*----------------------------------------- */
+html,
+body {
+  margin: 0;
+}
 ::-moz-selection {
   background: #222222;
   color: #fff;
@@ -179,4 +183,7 @@ nav ol {
 /*----------------------------------------- */
 html {
   font: 14px/1.4em sans-serif;
+}
+.main-nav {
+  background: green;
 }

@@ -103,6 +103,10 @@ textarea {
 }
 /*--------------- grid ------------------- */
 /*----------------------------------------- */
+html,
+body {
+  margin: 0;
+}
 ::-moz-selection {
   background: #222222;
   color: #fff;
