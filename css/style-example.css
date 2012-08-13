@@ -184,3 +184,6 @@ nav ol {
 html {
   font: 14px/1.4em sans-serif;
 }
+.main-nav {
+  background: green;
+}
