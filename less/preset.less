@@ -2,6 +2,12 @@
 /*--------------- grid ------------------- */
 
 
+// Fixed (940px)
+#grid > .core(@gridColumnWidth, @gridGutterWidth);
+
+// Fluid (940px)
+#grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth);
+
 /*----------------------------------------- */
 
 html,
@@ -52,6 +58,15 @@ h5 {
 h6 {
 	font-size: 0.75em;
 	margin: 2.33em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2em;
 }
 
 a {

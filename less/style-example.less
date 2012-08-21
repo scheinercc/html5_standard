@@ -1,15 +1,14 @@
-//*
 //imports
-//-------------------------------------*/
-@import "mixins";
+//-------------------------------------
+
 @import "vars";
+@import "mixins";
 @import "reset";
 @import "preset";
 
 
-//*
 //project specfic code
-//-------------------------------------*/
+//-------------------------------------
 html {
 	font: 14px/1.4em sans-serif;
 }
@@ -19,4 +18,12 @@ html {
 // example 1
 .main-nav {
 	background: green;
+}
+blockquote {
+	&:before {
+		content: ('“');
+	}
+	&:after{
+		content: ('„');
+	}
 }
