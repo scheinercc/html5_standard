@@ -1,15 +1,15 @@
-//*---------------------------------------------------
+//
 // Project specific mixins
-//-----------------------------------------------------*/
+//-----------------------------------------------------
 
 .ie7-inline-block() {
 	display: inline;
 	zoom: 1;
 }
 
-//*---------------------------------------------------
+// mixins used by the reset
+// -------------------------
 // Webkit-style focus from https://github.com/twitter/bootstrap
-//-----------------------------------------------------*/
 .tab-focus() {
   // Default
   outline: thin dotted #333;
@@ -19,20 +19,30 @@
 }
 
 
-.clearfix {
-	*zoom: 1;
+// mixins used by the grid
+//-----------------------------------------------------
 
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
+// Clearfix
+// --------
+// https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L9
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
 }
 
 // Block level inputs
+// -------------------------
+// https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L153
 .input-block-level {
   display: block;
   width: 100%;
@@ -44,6 +54,8 @@
 
 
 // The Grid
+// from bootstrap: https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L546
+//-----------------------------------------------------
 #grid {
 
   .core (@gridColumnWidth, @gridGutterWidth) {

@@ -3,8 +3,9 @@
 }
 .clearfix:before,
 .clearfix:after {
-  content: "";
   display: table;
+  content: "";
+  line-height: 0;
 }
 .clearfix:after {
   clear: both;
@@ -124,8 +125,9 @@ textarea {
 }
 .row:before,
 .row:after {
-  content: "";
   display: table;
+  content: "";
+  line-height: 0;
 }
 .row:after {
   clear: both;
@@ -217,8 +219,9 @@ textarea {
 }
 .row-fluid:before,
 .row-fluid:after {
-  content: "";
   display: table;
+  content: "";
+  line-height: 0;
 }
 .row-fluid:after {
   clear: both;
