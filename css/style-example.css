@@ -372,12 +372,54 @@ nav ol {
 html {
   font: 14px/1.4em sans-serif;
 }
-.main-nav {
-  background: green;
+a {
+  text-decoration: none;
 }
 blockquote:before {
-  content: '“';
+  content: '„';
 }
 blockquote:after {
-  content: '„';
+  content: '“';
+}
+.header,
+.main-section,
+.footer {
+  width: 980px;
+  margin: 0 auto 10px;
+}
+.header {
+  margin-top: 20px;
+}
+.main-nav {
+  margin-bottom: 20px;
+}
+.main-nav-inner-item {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+.lt-ie8 .main-nav-inner-item {
+  display: inline;
+  zoom: 1;
+}
+.main-nav-inner-content {
+  display: block;
+  padding: 5px 10px;
+  line-height: 1em;
+  background: #ddd;
+  border-radius: 3px;
+}
+.main-nav-inner-content:hover {
+  background-color: #000;
+  color: #fff;
+}
+.aside {
+  padding: 10px 0 0;
+}
+.aside h1 {
+  font-size: 1.2em;
+}
+.footer section {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 85%;
 }
