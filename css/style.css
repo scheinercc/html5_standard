@@ -360,17 +360,6 @@ nav ol {
   padding: 0;
 }
 /*--------------- helper classes ------------------- */
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.ie-lt8 .clearfix {
-  zoom: 1;
-}
 /*----------------------------------------- */
 .test {
   color: #444444;

@@ -1,15 +1,19 @@
-//
-// Project specific mixins
+// Mixins
 //-----------------------------------------------------
+
+// Project specific mixins
+// -------------------------
 
 .ie7-inline-block() {
 	display: inline;
 	zoom: 1;
 }
 
+
 // mixins used by the reset
 // -------------------------
 // Webkit-style focus from https://github.com/twitter/bootstrap
+
 .tab-focus() {
   // Default
   outline: thin dotted #333;
@@ -20,10 +24,11 @@
 
 
 // mixins used by the grid
-//-----------------------------------------------------
+//--------------------------
 
 // Clearfix
 // --------
+
 // https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L9
 .clearfix {
   *zoom: 1;
@@ -42,6 +47,7 @@
 
 // Block level inputs
 // -------------------------
+
 // https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L153
 .input-block-level {
   display: block;
@@ -56,6 +62,7 @@
 // The Grid
 // from bootstrap: https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L546
 //-----------------------------------------------------
+
 #grid {
 
   .core (@gridColumnWidth, @gridGutterWidth) {
@@ -158,25 +165,26 @@
 
 }
 
-//*---------------------------------------------------
+
+//---------------------------------------------------
 //    Based on LESS Elements 0.6 by Dmitry Fadeyev
 //  ---------------------------------------------------
 //    More info at: http://lesselements.com
-//-----------------------------------------------------*/
-//*
+//-----------------------------------------------------
+//
 //	updates by Albert Scheiner 11/08/2012
 //	- remove several mixins
 //		where prefexes are not required any more
 //		add links for reference
 //	- add comments for browser support
 //	- remove single out dated prefixed code
-//-----------------------------------------------------*/
+//-----------------------------------------------------
 
 
 
-//*
+//
 //	removed mixins - no need for vendor prefixes any more
-//-----------------------------------------------------*/
+//-----------------------------------------------------
 
 
 //####
@@ -207,35 +215,26 @@
 
 
 
-
-//*
-//	mixins
-//-----------------------------------------------------*/
-
-// @opacity
+// opacity
+// ----------
 .opacity(@opacity) {
   opacity: @opacity / 100;
   filter: ~"alpha(opacity=@{opacity})";
 }
 
-.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
-	border-top: solid 1px @top-color;
-	border-left: solid 1px @left-color;
-	border-right: solid 1px @right-color;
-	border-bottom: solid 1px @bottom-color;
-}
-
-//	@linear-gradient
-//	@w3c: http://www.w3.org/TR/css3-images/#linear-gradients
+// linear-gradient
+// ------------------
+// @w3c: http://www.w3.org/TR/css3-images/#linear-gradients
 //	<linear-gradient> = linear-gradient(
 //		[ [ <angle> | to <side-or-corner> ] ,]? 
 //		<color-stop>[, <color-stop>]+
 //	)
-//	w3c: FF 16, Opera 12.5
-//	-webkit: Chrome19+ (23+); Safari5.1+ (6+)
-//	-moz:	FF 3.6 - 15
-//	-o: Opera 11.10 - 12.0
-//	-ms: MSIE 10+
+// w3c: FF 16, Opera 12.5
+// -webkit: Chrome19+ (23+); Safari5.1+ (6+)
+// -moz:	FF 3.6 - 15
+// -o: Opera 11.10 - 12.0
+// -ms: MSIE 10+
+
 .gradient(@dir-w3c: right, @dir-vendor: left, @color: #F5F5F5, @start: #EEE, @stop: #FFF) {
 	background: @color;
 	background: -webkit-linear-gradient(
@@ -266,12 +265,13 @@
 }
 
 
-//	@transition
-//	w3c: FF 16, Opera 12.5
-//	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
-//	-moz:	FF 4 - 15
-//	-o: Opera 12.0
-//	-ms: MSIE 10+
+// transition
+// --------------
+// w3c: FF 16, Opera 12.5
+// -webkit: Chrome20+ (23+); Safari5.1+ (6+)
+// -moz:	FF 4 - 15
+// -o: Opera 12.0
+// -ms: MSIE 10+
 .transition-duration(@duration: 0.2s) {
 	-webkit-transition-duration: @duration;
 	-moz-transition-duration: @duration;
@@ -288,12 +288,13 @@
 }
 
 
-//	@transform
-//	w3c: FF 16, Opera 12.5, IE 10
-//	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
-//	-moz:	FF 4 - 15
-//	-o: Opera 12.0
-//	-ms: MSIE 9
+// @transform
+// ------------
+// w3c: FF 16, Opera 12.5, IE 10
+// -webkit: Chrome20+ (23+); Safari5.1+ (6+)
+// -moz:	FF 4 - 15
+// -o: Opera 12.0
+// -ms: MSIE 9
 .rotation(@deg:5deg){
 	-webkit-transform: rotate(@deg);
 	-moz-transform: rotate(@deg);
@@ -317,10 +318,11 @@
 }
 
 
-//	@column
-//	w3c: Opera 12.0, IE 10
-//	-webkit: Chrome20+ (23+); Safari5.1+ (6+)
-//	-moz:	FF 3.6+ (16+)
+// @column
+// --------
+// w3c: Opera 12.0, IE 10
+// -webkit: Chrome20+ (23+); Safari5.1+ (6+)
+// -moz:	FF 3.6+ (16+)
 .columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
 	-webkit-column-width: @colwidth;
 	-webkit-column-count: @colcount;
