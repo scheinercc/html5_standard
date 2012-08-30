@@ -1,0 +1,96 @@
+//imports
+//-------------------------------------
+
+@import "vars";
+@import "mixins";
+@import "reset";
+@import "preset";
+
+
+//project specfic code
+//-------------------------------------
+html {
+	font: 14px/1.4em sans-serif;
+}
+
+// index page
+//-------------------------------------
+
+// example 1
+//-------------------------------------
+
+// generic classes
+a {
+	text-decoration: none;
+}
+
+blockquote {
+	&:before {
+		content: ('„');
+	}
+	&:after{
+		content: ('“');
+	}
+}
+
+
+// page setup
+.outer-wrapper {
+	width: 100%; // IE7
+}
+.inner-wrapper {
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+// header
+.header {
+	padding: 20px 0 0;
+	background: #ff9400;
+}
+.main-nav {
+	margin-bottom: 20px;
+}
+.main-nav-inner-item {
+	display: inline-block;
+	margin: 0 10px 0 0;
+}
+.lt-ie8 .main-nav-inner-item {
+	.ie7-inline-block;
+}
+.main-nav-inner-content {
+	display: block;
+	padding: 5px 10px;
+	line-height: 1em;
+	background: #ddd;
+	border-radius: 3px;
+
+	&:hover {
+		background-color: #000;
+		color: #fff;
+	}
+}
+
+// section content
+.main-section-1 {
+	background-color: #cef500;
+}
+.main-section-2 {
+	background-color: #ffd600;
+}
+.aside {
+	padding: 10px 0 0;
+
+	h1 {
+		font-size: 1.2em;
+	}
+}
+
+// footer
+.footer section {
+	padding: 10px;
+	border-top: 2px dashed #a60c00;
+	font-size: 85%;
+}
