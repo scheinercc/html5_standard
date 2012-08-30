@@ -1,0 +1,417 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+.lt-ie8 audio,
+.lt-ie8 canvas,
+.lt-ie8 video {
+  display: inline;
+  zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+#map_canvas img {
+  max-width: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+}
+.lt-ie8 button,
+.lt-ie8 input {
+  overflow: visible;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="search"] {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+/*--------------- grid ------------------- */
+.row {
+  margin-left: -20px;
+  *zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+[class*="span"] {
+  float: left;
+  margin-left: 20px;
+}
+.container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 940px;
+}
+.span12 {
+  width: 940px;
+}
+.span11 {
+  width: 860px;
+}
+.span10 {
+  width: 780px;
+}
+.span9 {
+  width: 700px;
+}
+.span8 {
+  width: 620px;
+}
+.span7 {
+  width: 540px;
+}
+.span6 {
+  width: 460px;
+}
+.span5 {
+  width: 380px;
+}
+.span4 {
+  width: 300px;
+}
+.span3 {
+  width: 220px;
+}
+.span2 {
+  width: 140px;
+}
+.span1 {
+  width: 60px;
+}
+.offset12 {
+  margin-left: 980px;
+}
+.offset11 {
+  margin-left: 900px;
+}
+.offset10 {
+  margin-left: 820px;
+}
+.offset9 {
+  margin-left: 740px;
+}
+.offset8 {
+  margin-left: 660px;
+}
+.offset7 {
+  margin-left: 580px;
+}
+.offset6 {
+  margin-left: 500px;
+}
+.offset5 {
+  margin-left: 420px;
+}
+.offset4 {
+  margin-left: 340px;
+}
+.offset3 {
+  margin-left: 260px;
+}
+.offset2 {
+  margin-left: 180px;
+}
+.offset1 {
+  margin-left: 100px;
+}
+.row-fluid {
+  width: 100%;
+  *zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row-fluid:after {
+  clear: both;
+}
+.row-fluid [class*="span"] {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  float: left;
+  margin-left: 2.127659574%;
+  *margin-left: 2.0744680846382977%;
+}
+.row-fluid [class*="span"]:first-child {
+  margin-left: 0;
+}
+.row-fluid .span12 {
+  width: 99.99999998999999%;
+  *width: 99.94680850063828%;
+}
+.row-fluid .span11 {
+  width: 91.489361693%;
+  *width: 91.4361702036383%;
+}
+.row-fluid .span10 {
+  width: 82.97872339599999%;
+  *width: 82.92553190663828%;
+}
+.row-fluid .span9 {
+  width: 74.468085099%;
+  *width: 74.4148936096383%;
+}
+.row-fluid .span8 {
+  width: 65.95744680199999%;
+  *width: 65.90425531263828%;
+}
+.row-fluid .span7 {
+  width: 57.446808505%;
+  *width: 57.3936170156383%;
+}
+.row-fluid .span6 {
+  width: 48.93617020799999%;
+  *width: 48.88297871863829%;
+}
+.row-fluid .span5 {
+  width: 40.425531911%;
+  *width: 40.3723404216383%;
+}
+.row-fluid .span4 {
+  width: 31.914893614%;
+  *width: 31.8617021246383%;
+}
+.row-fluid .span3 {
+  width: 23.404255317%;
+  *width: 23.3510638276383%;
+}
+.row-fluid .span2 {
+  width: 14.89361702%;
+  *width: 14.8404255306383%;
+}
+.row-fluid .span1 {
+  width: 6.382978723%;
+  *width: 6.329787233638298%;
+}
+/*----------------------------------------- */
+html,
+body {
+  margin: 0;
+}
+::-moz-selection {
+  background: #222222;
+  color: #ffffff;
+  text-shadow: none;
+}
+::selection {
+  background: #222222;
+  color: #ffffff;
+  text-shadow: none;
+}
+h1 {
+  font-size: 2em;
+  margin: 0 0 0.67em;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 0.83em;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 0 0 1em;
+}
+h4 {
+  font-size: 1em;
+  margin: 0 0 1.33em;
+}
+h5 {
+  font-size: 0.83em;
+  margin: 0 0 1.67em;
+}
+h6 {
+  font-size: 0.75em;
+  margin: 0 0 2.33em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+}
+a {
+  color: #222222;
+}
+a:visited {
+  color: #222222;
+}
+a:hover {
+  color: #222222;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+ul,
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*--------------- helper classes ------------------- */
+/*----------------------------------------- */
+html {
+  font: 14px/1.4em sans-serif;
+}
+a {
+  text-decoration: none;
+}
+blockquote:before {
+  content: '„';
+}
+blockquote:after {
+  content: '“';
+}
+.header,
+.main-section,
+.footer {
+  width: 980px;
+  margin: 0 auto 10px;
+}
+.header {
+  margin-top: 20px;
+}
+.main-nav {
+  margin-bottom: 20px;
+}
+.main-nav-inner-item {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+.lt-ie8 .main-nav-inner-item {
+  display: inline;
+  zoom: 1;
+}
+.main-nav-inner-content {
+  display: block;
+  padding: 5px 10px;
+  line-height: 1em;
+  background: #ddd;
+  border-radius: 3px;
+}
+.main-nav-inner-content:hover {
+  background-color: #000;
+  color: #fff;
+}
+.aside {
+  padding: 10px 0 0;
+}
+.aside h1 {
+  font-size: 1.2em;
+}
+.footer section {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 85%;
+}
