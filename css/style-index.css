@@ -341,6 +341,9 @@ a:visited {
 a:hover {
   color: #222222;
 }
+p {
+  margin: 0 0 1em;
+}
 b,
 strong {
   font-weight: bold;
@@ -373,29 +376,41 @@ blockquote:before {
 blockquote:after {
   content: '“';
 }
-.main-section {
+hr {
+  border: 1px solid #222;
+}
+.wrapper {
   width: 980px;
-  margin: 20px auto 40px;
+  margin: 0 auto 28px;
 }
-h1 {
-  margin-bottom: 2em;
+.main-nav-inner-item {
+  display: inline-block;
+  margin: 0 10px 0 0;
 }
-li a {
-  display: block;
-  width: 100px;
-  margin: 0 0 20px 0;
-  padding: 12px 30px 8px;
-  background-color: #0e90ff;
-  color: #fff;
-  text-shadow: #ffffff 10px -6px 2px;
-  border-radius: 3px;
+.header {
+  margin-top: 28px;
 }
-li a:hover {
+.main-nav-inner-content {
+  display: inline-block;
+  margin: 0 0 28px 0;
+  padding: 4px 10px 1px;
+  background-color: #222;
+  color: #eee;
+  border-radius: 1px;
+}
+.main-nav-inner-content:hover {
   box-shadow: 0px 0px 5px #333;
   color: #fff;
+  background-color: #f00;
 }
-li a:visited {
+.main-nav-inner-content:visited {
   color: #fff;
+}
+.grid-button {
+  text-align: right;
+}
+.main-section article {
+  margin-bottom: 1em;
 }
 .footer section {
   padding: 10px;

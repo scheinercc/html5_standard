@@ -1,5 +1,20 @@
 $(document).ready( function () {
 
-	var frame = $('<a>back to index</a>')
-	$('body').prepend(frame);
+	var gridTrigger = $('.grid-button a'),
+		gridTriggerText = gridTrigger.find('span').text(),
+		origText = origText || gridTriggerText;
+
+	gridTrigger.on( 'click', function ( e ) {
+
+		var newText = 'Hide';
+
+		if ( origText === gridTriggerText ) {
+			origText = newText;
+		} else {
+			origText = gridTriggerText;
+		}
+		gridTrigger.find('span').text(origText);
+
+		e.preventDefault();
+	});
 });
