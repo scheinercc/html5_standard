@@ -335,9 +335,6 @@ h6 {
 a {
   color: #222222;
 }
-a:visited {
-  color: #222222;
-}
 a:hover {
   color: #222222;
 }
@@ -380,7 +377,7 @@ blockquote:after {
   width: 100%;
 }
 .inner-wrapper {
-  width: 980px;
+  width: 940px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -423,7 +420,7 @@ blockquote:after {
 .aside h1 {
   font-size: 1.2em;
 }
-.footer section {
+.footer .inner-wrapper {
   padding: 10px;
   border-top: 2px dashed #a60c00;
   font-size: 85%;
