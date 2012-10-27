@@ -25,29 +25,75 @@
 </head>
 <body>
 
-	<header class="row header" role="banner">
-		<nav class="span12 main-nav" role="navigation">
-			<ul class="main-nav-inner">
-				<li class="main-nav-inner-item">
-					<a href="" class="main-nav-inner-content">nav item 1</a>
-				</li><!--
-				--><li class="main-nav-inner-item">
-					<a href="" class="main-nav-inner-content">nav item 2</a>
-				</li><!--
-				--><li class="main-nav-inner-item">
-					<a href="" class="main-nav-inner-content">nav item 3</a>
-				</li>
-			</ul>
-		</nav>
-		<hgroup class="span12">
-			<h1>h1 in header element</h1>
-			<h2>h2 in header element</h2>
-		</hgroup>
+	<header class="header" role="banner">
+		<div class="row">
+			<nav class="span12 main-nav" role="navigation">
+				<ul class="main-nav-inner">
+					<li class="main-nav-inner-item">
+						<a href="index.html" class="main-nav-inner-content">Home</a>
+					</li><!--
+					--><li class="main-nav-inner-item">
+						<a href="example1.html" class="main-nav-inner-content">Example 1</a>
+					</li><!--
+					--><li class="main-nav-inner-item">
+						<a href="example2.html" class="main-nav-inner-content">Example 2</a>
+					</li><!--
+					--><li class="main-nav-inner-item">
+						<a href="" class="main-nav-inner-content">Example 3</a>
+					</li>
+				</ul>
+			</nav>
+			<hgroup class="span12">
+				<h1>h1 in header element</h1>
+				<h2>h2 in header element</h2>
+			</hgroup>
+		</div>
 	</header>
+	<section class="main-section" role="main">
+		<div class="row">
+			<section class="sub-section span8">
+				<h1>h1 in section </h1>
+				<article class="">
+					<h2>h2 in article </h2>
+					<p>
+						Lorem ipsum dolorem, Cornelia in coloseum est.
+						Lorem ipsum dolorem, Cornelia in coloseum est.
+						Lorem ipsum dolorem, Cornelia in coloseum est.
+						Lorem ipsum dolorem, Cornelia in coloseum est.
+						Lorem ipsum dolorem, Cornelia in coloseum est.
+						Lorem ipsum dolorem, Cornelia in coloseum est.
+						<br>
+						Ubi Marcus est ? Cornelia Marcus expectat.
+					</p>
+					<p>
+						Carve carnem! Hannibal ante portas et Bello Gallico est ...
+					</p>
+				</article>
+				<article class="">
+					<h2>h2 in article </h2>
+					<p>
+						Lorem ipsum dolorem, Cornelia in coloseum est.
+						<br>
+						Ubi Marcus est ? Cornelia Marcus expectat.
+					</p>
+					<p>
+						Carve carnem! Hannibal ante portas et Bello Gallico est ...
+					</p>
+				</article>
+			</section>
+			<aside class="span4 aside">
+				<h1>h1 in aside </h1>
+				<blockquote>
+					some great quote from customer
+				</blockquote>
+			</aside>
+		</div>
+	</section>
+
 	<section class="main-section row" role="main">
-		<section class="sub-section span8">
-			<h1>h1 in section </h1>
-			<article class="">
+		<div class="row">
+			<h1 class="span12">h1 in section </h1>
+			<article class="span6">
 				<h2>h2 in article </h2>
 				<p>
 					Lorem ipsum dolorem, Cornelia in coloseum est.
@@ -63,7 +109,7 @@
 					Carve carnem! Hannibal ante portas et Bello Gallico est ...
 				</p>
 			</article>
-			<article class="">
+			<article class="span6">
 				<h2>h2 in article </h2>
 				<p>
 					Lorem ipsum dolorem, Cornelia in coloseum est.
@@ -74,50 +120,15 @@
 					Carve carnem! Hannibal ante portas et Bello Gallico est ...
 				</p>
 			</article>
-		</section>
-		<aside class="span4 aside">
-			<h1>h1 in aside </h1>
-			<blockquote>
-				some great quote from customer
-			</blockquote>
-		</aside>
+		</div>
 	</section>
 
-	<section class="main-section row" role="main">
-		<h1 class="span12">h1 in section </h1>
-		<article class="span6">
-			<h2>h2 in article </h2>
-			<p>
-				Lorem ipsum dolorem, Cornelia in coloseum est.
-				Lorem ipsum dolorem, Cornelia in coloseum est.
-				Lorem ipsum dolorem, Cornelia in coloseum est.
-				Lorem ipsum dolorem, Cornelia in coloseum est.
-				Lorem ipsum dolorem, Cornelia in coloseum est.
-				Lorem ipsum dolorem, Cornelia in coloseum est.
-				<br>
-				Ubi Marcus est ? Cornelia Marcus expectat.
-			</p>
-			<p>
-				Carve carnem! Hannibal ante portas et Bello Gallico est ...
-			</p>
-		</article>
-		<article class="span6">
-			<h2>h2 in article </h2>
-			<p>
-				Lorem ipsum dolorem, Cornelia in coloseum est.
-				<br>
-				Ubi Marcus est ? Cornelia Marcus expectat.
-			</p>
-			<p>
-				Carve carnem! Hannibal ante portas et Bello Gallico est ...
-			</p>
-		</article>
-	</section>
-
-	<footer class="row footer" role="contentinfo">
-		<section class="span12">
-			&copy; Lorem ipsum dolorem, Cornelia in coloseum est. Lorem ipsum dolorem, Cornelia in coloseum est. 
-		</section>
+	<footer class="footer" role="contentinfo">
+		<div class="row">
+			<section class="span12">
+				&copy; Lorem ipsum dolorem, Cornelia in coloseum est. Lorem ipsum dolorem, Cornelia in coloseum est.
+			</section>
+		</div>
 	</footer>
 
 	<!-- scripts II: after DOM load -->
@@ -125,6 +136,6 @@
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.0.min.js"><\/script>')</script>
 
 	<!--script src="js/elastic-digital.js"></script-->
-	
+
 </body>
 </html>
