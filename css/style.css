@@ -80,6 +80,13 @@ sup {
 sub {
   bottom: -0.25em;
 }
+b,
+strong {
+  font-weight: bold;
+}
+small {
+  font-size: 80%;
+}
 dl,
 menu,
 ol,
@@ -98,6 +105,8 @@ nav ul,
 nav ol {
   list-style: none;
   list-style-image: none;
+  margin: 0;
+  padding: 0;
 }
 img {
   max-width: 100%;
@@ -386,29 +395,15 @@ a {
 a:hover {
   color: #222222;
 }
+abbr[title] {
+  border-bottom: 1px dotted;
+}
 p {
   margin: 0 0 1em;
-}
-b,
-strong {
-  font-weight: bold;
 }
 blockquote {
   margin: 1em 40px;
 }
-ul,
-ol {
-  margin: 1em 0;
-  padding: 0 0 0 40px;
-}
-nav ul,
-nav ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/*--------------- helper classes ------------------- */
-/*----------------------------------------- */
 .test {
   color: #444444;
 }

@@ -11,6 +11,7 @@
 // HTML5 display definitions
 // Base settings
 // Links
+// Typography
 // Lists (just for IE 7)
 // Embedded content
 // Forms
@@ -122,6 +123,10 @@ a:hover {
 	outline: 0;
 }
 
+
+// Typography
+//-----------------------------------------------------
+
 // Prevents sub and sup affecting line-height in all browsers
 // -------------------------
 
@@ -137,6 +142,21 @@ sup {
 }
 sub {
 	bottom: -0.25em;
+}
+
+// Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+// -------------------------
+
+b,
+strong {
+	font-weight: bold;
+}
+
+// Addresses inconsistent and variable font size in all browsers.
+// -------------------------
+
+small {
+	font-size: 80%;
 }
 
 
@@ -173,6 +193,8 @@ nav ul,
 nav ol {
 	list-style: none;
 	list-style-image: none;
+	margin: 0;
+	padding: 0;
 }
 
 
