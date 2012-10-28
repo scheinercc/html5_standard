@@ -1,6 +1,16 @@
 // Preset
 // ------------------------------------------------------------------------
 
+
+// Index
+//-----------------------------------------------------
+// Grid
+// Typogrophy
+
+
+
+// Grid
+//-----------------------------------------------------
 /*--------------- grid ------------------- */
 
 
@@ -12,13 +22,12 @@
 
 /*----------------------------------------- */
 
-html,
-body {
-	margin: 0;
-}
 
+// Typography
+//-----------------------------------------------------
 
-// based on HTML5 Boilerplate
+// adjust color for text selection
+// -------------------------
 // h5bp.com/css
 
 ::-moz-selection {
@@ -31,6 +40,13 @@ body {
 	color: @off-brand;
 	text-shadow: none;
 }
+
+
+// Addresses font sizes and margins set differently in IE 6/7.
+// Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5, and Chrome.
+// -------------------------
+// from normalise.css, adjusted/removed:
+// https://github.com/necolas/normalize.css/commit/7e014980b9155c8ef77b6d08c2ac352382a095b5
 
 h1 {
 	font-size: 2em;
@@ -78,14 +94,24 @@ a {
 		color: @brand;
 	}
 }
+
+// Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+// -------------------------
+
 //abbr[title] { border-bottom: 1px dotted; }
 p {
 	margin: 0 0 1em;
 }
+
+// Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+// -------------------------
+
 b,
 strong {
 	font-weight: bold;
 }
+
+
 blockquote {
 	margin: 1em 40px;
 }

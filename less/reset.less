@@ -1,9 +1,27 @@
 // Reset
 // ------------------------------------------------------------------------
-// based on Reset.less
+// based on Reset.less v.2.0.1
 // Adapted from Normalize.css http://github.com/necolas/normalize.css
+// re-add support for IE 7
 
-// Display in IE6-9 and FF3
+
+
+// Index
+//-----------------------------------------------------
+// HTML5 display definitions
+// Base settings
+// Links
+// Lists (just for IE 7)
+// Embedded content
+// Forms
+// Tables
+
+
+
+// HTML5 display definitions
+//-----------------------------------------------------
+
+// Corrects `block` display not defined in IE 8/9.
 // -------------------------
 
 article,
@@ -15,11 +33,12 @@ footer,
 header,
 hgroup,
 nav,
-section {
+section,
+summary {
 	display: block;
 }
 
-// Display block in IE6-9 and FF3
+// Corrects `inline-block` display not defined in IE 8/9.
 // -------------------------
 
 audio,
@@ -36,26 +55,70 @@ video {
 	}
 }
 
-// Prevents modern browsers from displaying 'audio' without controls
+// Prevents modern browsers from displaying 'audio' without controls.
+// Remove excess height in iOS 5 devices.
 // -------------------------
 
 audio:not([controls]) {
 	display: none;
+	height: 0;
 }
 
+
+// Addresses styling for `hidden` attribute not present in IE 8/9.
+// -------------------------
+
+[hidden] {
+	display: none;
+}
+
+
 // Base settings
+//-----------------------------------------------------
+
+// 1. Corrects text resizing oddly in IE 7 when body `font-size` is set using `em` units.
+// 2. Sets default font family to sans-serif.
+// 3. Prevents iOS text size adjust after orientation change, without disabling
+// user zoom.
 // -------------------------
 
 html {
 	font-size: 100%;
+	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
+
+// Removes default margin.
+// -------------------------
+
+body {
+	margin: 0;
+}
+
+// Addresses margins set differently in IE 6/7.
+// -------------------------
+
+p {
+	margin: 1em 0;
+}
+
+
+// Links
+//-----------------------------------------------------
+
+// Addresses `outline` inconsistency between Chrome and other browsers.
+// -------------------------
+
 a:focus {
 	.tab-focus();
 }
-a:hover,
-a:active {
+
+// Improves readability when focused and also mouse hovered in all browsers.
+// -------------------------
+
+a:active,
+a:hover {
 	outline: 0;
 }
 
@@ -76,67 +139,194 @@ sub {
 	bottom: -0.25em;
 }
 
-// Img border in a's and image quality
+
+// Lists
+//-----------------------------------------------------
+
+// Addresses margins set differently in IE 7.
+// -------------------------
+
+dl,
+menu,
+ol,
+ul {
+	margin: 1em 0;
+}
+
+dd {
+	margin: 0 0 0 40px;
+}
+
+// Addresses paddings set differently in IE 7.
+// -------------------------
+
+menu,
+ol,
+ul {
+	padding: 0 0 0 40px;
+}
+
+// Corrects list images handled incorrectly in IE 7.
+// -------------------------
+
+nav ul,
+nav ol {
+	list-style: none;
+	list-style-image: none;
+}
+
+
+// Embedded content
+//-----------------------------------------------------
+
+// Removes border when inside `a` element in IE 8/9.
+// Make images inherently responsive + image quality.
 // -------------------------
 
 img {
-	max-width: 100%; // Make images inherently responsive
+	max-width: 100%;
 	vertical-align: middle;
 	border: 0;
 	-ms-interpolation-mode: bicubic;
 }
 
-// Prevent max-width from affecting Google Maps
-#map_canvas img {
-	max-width: none;
-}
 
 // Forms
+//-----------------------------------------------------
+
+// Addresses margins set differently in IE 7, Firefox 3+, Safari 5, and Chrome.
+// Corrects font family not being inherited in all browsers.
+// Corrects font size not being inherited in all browsers.
 // -------------------------
 
-// Font size in all browsers, margin changes, misc consistency
 button,
 input,
 select,
 textarea {
 	margin: 0;
+	font-family: inherit;
 	font-size: 100%;
-	vertical-align: middle;
 }
 
-button,
-input {
-	line-height: normal; // FF3/4 have !important on line-height in UA stylesheet
-}
-.lt-ie8 {
+// Improves appearance and consistency in ie 7.
+// -------------------------
+
+.ie7 {
 	button,
-	input {
-		overflow: visible; // Inner spacing ie IE6/7
+	input,
+	select,
+	textarea {
+		vertical-align: middle;
 	}
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
-	padding: 0;
-	border: 0;
-}
+// FF3/4 have !important on line-height in UA stylesheet
+// -------------------------
+
 button,
-input[type="button"],
+input {
+	line-height: normal;
+}
+
+// Inner spacing ie IE6/7
+// -------------------------
+
+.lt-ie8 {
+	button,
+	input {
+		overflow: visible;
+	}
+}
+
+// 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+// and `video` controls.
+// 2. Corrects inability to style clickable `input` types in iOS.
+// 3. Improves usability and consistency of cursor style between image-type
+// `input` and others.
+// -------------------------
+
+button,
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	cursor: pointer; // Cursors on all buttons applied consistently
-	-webkit-appearance: button; // Style clickable inputs in iOS
+	-webkit-appearance: button;
+	cursor: pointer;
 }
-input[type="search"] { // Appearance in Safari/Chrome
+
+// Re-set default cursor for disabled elements.
+// -------------------------
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+// 1. Addresses box sizing set to `content-box` in IE 8/9.
+// 2. Removes excess padding in IE 8/9.
+// -------------------------
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+// Removes excess padding in IE 7.
+// -------------------------
+
+.ie7 {
+	input[type="checkbox"],
+	input[type="radio"] {
+		height: 13px;
+		width: 13px;
+	}
+}
+
+// 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+// 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+// -------------------------
+
+input[type="search"] {
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	-webkit-appearance: textfield;
 }
+
+// Removes inner padding and search cancel button in Safari 5 and Chrome
+// on OS X.
+// -------------------------
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
 	-webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
 }
+
+// Removes inner padding and border in Firefox 4+.
+// -------------------------
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+// 1. Removes default vertical scrollbar in IE 8/9.
+// 2. Improves readability and alignment in all browsers.
+// -------------------------
+
 textarea {
-	overflow: auto; // Remove vertical scrollbar in IE6-9
-	vertical-align: top; // Readability and alignment cross-browser
+	overflow: auto;
+	vertical-align: top;
+}
+
+
+// Tables
+//-----------------------------------------------------
+
+// Remove most spacing between table cells.
+// -------------------------
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
