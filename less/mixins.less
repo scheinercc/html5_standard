@@ -191,10 +191,10 @@
 //   with IE6/7 and IE8 support
 // ----------
 .opacity (@opacity) {
-		@opacityPercentage: @opacity * 100;
-		opacity: @opacity;
-		-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@{opacityPercentage}))";
-		filter: ~"alpha(opacity = (@{opacityPercentage}))";
+	@opacityPercentage: @opacity * 100;
+	opacity: @opacity;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@{opacityPercentage}))";
+	filter: ~"alpha(opacity = (@{opacityPercentage}))";
 }
 
 // linear-gradient
