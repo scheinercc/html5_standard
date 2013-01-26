@@ -15,11 +15,11 @@
 // Webkit-style focus from https://github.com/twitter/bootstrap
 
 .tab-focus() {
-  // Default
-  outline: thin dotted #333;
-  // Webkit
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+	// Default
+	outline: thin dotted #333;
+	// Webkit
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
 }
 
 
@@ -31,18 +31,18 @@
 
 // https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L9
 .clearfix {
-  *zoom: 1;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    // Fixes Opera/contenteditable bug:
-    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
-    line-height: 0;
-  }
-  &:after {
-    clear: both;
-  }
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		// Fixes Opera/contenteditable bug:
+		// http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+		line-height: 0;
+	}
+	&:after {
+		clear: both;
+	}
 }
 
 // Block level inputs
@@ -50,10 +50,10 @@
 
 // https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L153
 .input-block-level {
-  display: block;
-  width: 100%;
-  min-height: 28px; // Make inputs at least the height of their button counterpart
-  //.box-sizing(border-box); // Makes inputs behave like true block-level elements
+	display: block;
+	width: 100%;
+	min-height: 28px; // Make inputs at least the height of their button counterpart
+	//.box-sizing(border-box); // Makes inputs behave like true block-level elements
 }
 
 
@@ -65,103 +65,103 @@
 
 #grid {
 
-  .core (@gridColumnWidth, @gridGutterWidth) {
+	.core (@gridColumnWidth, @gridGutterWidth) {
 
-    .spanX (@index) when (@index > 0) {
-      (~".span@{index}") { .span(@index); }
-      .spanX(@index - 1);
-    }
-    .spanX (0) {}
+		.spanX (@index) when (@index > 0) {
+			(~".span@{index}") { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX (0) {}
 
-    .offsetX (@index) when (@index > 0) {
-      (~".offset@{index}") { .offset(@index); }
-      .offsetX(@index - 1);
-    }
-    .offsetX (0) {}
+		.offsetX (@index) when (@index > 0) {
+			(~".offset@{index}") { .offset(@index); }
+			.offsetX(@index - 1);
+		}
+		.offsetX (0) {}
 
-    .offset (@columns) {
-      margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
-    }
+		.offset (@columns) {
+			margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
+		}
 
-    .span (@columns) {
-      width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
-    }
+		.span (@columns) {
+			width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+		}
 
-    .row {
-      margin-left: @gridGutterWidth * -1;
-      .clearfix();
-    }
+		.row {
+			margin-left: @gridGutterWidth * -1;
+			.clearfix();
+		}
 
-    [class*="span"] {
-      float: left;
-      margin-left: @gridGutterWidth;
-    }
+		[class*="span"] {
+			float: left;
+			margin-left: @gridGutterWidth;
+		}
 
-    // Set the container width, and override it for fixed navbars in media queries
-    .container,
-    .navbar-fixed-top .container,
-    .navbar-fixed-bottom .container { .span(@gridColumns); }
+		// Set the container width, and override it for fixed navbars in media queries
+		.container,
+		.navbar-fixed-top .container,
+		.navbar-fixed-bottom .container { .span(@gridColumns); }
 
-    // generate .spanX and .offsetX
-    .spanX (@gridColumns);
-    .offsetX (@gridColumns);
+		// generate .spanX and .offsetX
+		.spanX (@gridColumns);
+		.offsetX (@gridColumns);
 
-  }
+	}
 
-  .fluid (@fluidGridColumnWidth, @fluidGridGutterWidth) {
+	.fluid (@fluidGridColumnWidth, @fluidGridGutterWidth) {
 
-    .spanX (@index) when (@index > 0) {
-      (~".span@{index}") { .span(@index); }
-      .spanX(@index - 1);
-    }
-    .spanX (0) {}
+		.spanX (@index) when (@index > 0) {
+			(~".span@{index}") { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX (0) {}
 
-    .span (@columns) {
-      width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
-      *width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
-    }
+		.span (@columns) {
+			width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
+			*width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
+		}
 
-    .row-fluid {
-      width: 100%;
-      .clearfix();
-      [class*="span"] {
-        .input-block-level();
-        float: left;
-        margin-left: @fluidGridGutterWidth;
-        *margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
-      }
-      [class*="span"]:first-child {
-        margin-left: 0;
-      }
+		.row-fluid {
+			width: 100%;
+			.clearfix();
+			[class*="span"] {
+				.input-block-level();
+				float: left;
+				margin-left: @fluidGridGutterWidth;
+				*margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
+			}
+			[class*="span"]:first-child {
+				margin-left: 0;
+			}
 
-      // generate .spanX
-      .spanX (@gridColumns);
-    }
+			// generate .spanX
+			.spanX (@gridColumns);
+		}
 
-  }
+	}
 
-  .input(@gridColumnWidth, @gridGutterWidth) {
+	.input(@gridColumnWidth, @gridGutterWidth) {
 
-    .spanX (@index) when (@index > 0) {
-      (~"input.span@{index}, textarea.span@{index}, .uneditable-input.span@{index}") { .span(@index); }
-      .spanX(@index - 1);
-    }
-    .spanX (0) {}
+		.spanX (@index) when (@index > 0) {
+			(~"input.span@{index}, textarea.span@{index}, .uneditable-input.span@{index}") { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX (0) {}
 
-    .span(@columns) {
-      width: ((@gridColumnWidth) * @columns) + (@gridGutterWidth * (@columns - 1)) - 10;
-    }
+		.span(@columns) {
+			width: ((@gridColumnWidth) * @columns) + (@gridGutterWidth * (@columns - 1)) - 10;
+		}
 
-    input,
-    textarea,
-    .uneditable-input {
-      margin-left: 0; // override margin-left from core grid system
-    }
+		input,
+		textarea,
+		.uneditable-input {
+			margin-left: 0; // override margin-left from core grid system
+		}
 
-    // generate .spanX
-    .spanX (@gridColumns);
+		// generate .spanX
+		.spanX (@gridColumns);
 
-  }
+	}
 
 }
 
@@ -171,6 +171,11 @@
 //  ---------------------------------------------------
 //    More info at: http://lesselements.com
 //-----------------------------------------------------
+//
+//	updates by Albert Scheiner 26/01/2013
+//	- remove comments
+//	- add support for old IE opacity
+//	- remove outdated vendor prefixes
 //
 //	updates by Albert Scheiner 11/08/2012
 //	- remove several mixins
@@ -182,77 +187,29 @@
 
 
 
-//
-//	removed mixins - no need for vendor prefixes any more
-//-----------------------------------------------------
-
-
-//####
-// @box-shadow
-// http://caniuse.com/#search=box-shadow
-// https://developer.mozilla.org/en-US/docs/CSS/box-shadow
-//####
-
-
-//####
-// @border-radius
-// http://caniuse.com/#search=border-radius
-// https://developer.mozilla.org/en-US/docs/CSS/border-radius
-//####
-
-
-//####
-// @background-clip
-// http://caniuse.com/#search=background-clip
-// https://developer.mozilla.org/en-US/docs/CSS/background-clip
-//####
-
-
-//####
 // @opacity
-// http://caniuse.com/#search=opacity
-//####
-
-
-
-// opacity
+//   with IE6/7 and IE8 support
 // ----------
-.opacity(@opacity) {
-  opacity: @opacity / 100;
-  filter: ~"alpha(opacity=@{opacity})";
+.opacity (@opacity) {
+		@opacityPercentage: @opacity * 100;
+		opacity: @opacity;
+		-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@{opacityPercentage}))";
+		filter: ~"alpha(opacity = (@{opacityPercentage}))";
 }
 
 // linear-gradient
 // ------------------
 // @w3c: http://www.w3.org/TR/css3-images/#linear-gradients
 //	<linear-gradient> = linear-gradient(
-//		[ [ <angle> | to <side-or-corner> ] ,]? 
+//		[ [ <angle> | to <side-or-corner> ] ,]?
 //		<color-stop>[, <color-stop>]+
 //	)
-// w3c: FF 16, Opera 12.5
-// -webkit: Chrome19+ (23+); Safari5.1+ (6+)
-// -moz:	FF 3.6 - 15
-// -o: Opera 11.10 - 12.0
-// -ms: MSIE 10+
+// w3c: FF 16, Opera 12.1, MSIE 10
+// -webkit: Chrome -25; Safari -6
 
 .gradient(@dir-w3c: right, @dir-vendor: left, @color: #F5F5F5, @start: #EEE, @stop: #FFF) {
 	background: @color;
 	background: -webkit-linear-gradient(
-		@dir-vendor,
-		@start 0%,
-		@stop 100%
-	);
-	background: -moz-linear-gradient(
-		@dir-vendor,
-		@start 0%,
-		@stop 100%
-	);
-	background: -ms-linear-gradient(
-		@dir-vendor,
-		@start 0%,
-		@stop 100%
-	);
-	background: -o-linear-gradient(
 		@dir-vendor,
 		@start 0%,
 		@stop 100%
@@ -265,55 +222,34 @@
 }
 
 
-// transition
+// @transition
 // --------------
-// w3c: FF 16, Opera 12.5
-// -webkit: Chrome20+ (23+); Safari5.1+ (6+)
-// -moz:	FF 4 - 15
-// -o: Opera 12.0
-// -ms: MSIE 10+
-.transition-duration(@duration: 0.2s) {
-	-webkit-transition-duration: @duration;
-	-moz-transition-duration: @duration;
-	-ms-transition-duration: @duration;
-	-o-transition-duration: @duration;
-	transition-duration: @duration;
-}
-.transition(@duration:0.2s, @ease:ease-out) {
-	-webkit-transition: all @duration @ease;
-	-moz-transition: all @duration @ease;
-	-ms-transition: all @duration @ease;
-	-o-transition: all @duration @ease;
-	transition: all @duration @ease;
+// w3c: FF 16, Opera 12.1, MSIE 10
+// -webkit: Chrome -26; Safari -6
+.transition(@attribute: all, @duration: .2s, @ease: ease-out, @delay: 0) {
+	-webkit-transition: @attribute @duration @ease @delay;
+	transition: @attribute @duration @ease @delay;
 }
 
 
 // @transform
 // ------------
-// w3c: FF 16, Opera 12.5, IE 10
-// -webkit: Chrome20+ (23+); Safari5.1+ (6+)
-// -moz:	FF 4 - 15
-// -o: Opera 12.0
+// w3c: FF 16, Opera 12.5, MSIE 10
+// -webkit: Chrome -26; Safari -6
 // -ms: MSIE 9
 .rotation(@deg:5deg){
 	-webkit-transform: rotate(@deg);
-	-moz-transform: rotate(@deg);
 	-ms-transform: rotate(@deg);
-	-o-transform: rotate(@deg);
 	transform: rotate(@deg);
 }
 .scale(@ratio:1.5){
 	-webkit-transform:scale(@ratio);
-	-moz-transform:scale(@ratio);
-	-o-transform:scale(@ratio);
 	-ms-transform:scale(@ratio);
 	transform:scale(@ratio);
 }
 .translate(@x:0, @y:0) {
 	-webkit-transform: translate(@x, @y);
-	-moz-transform: translate(@x, @y);
 	-ms-transform: translate(@x, @y);
-	-o-transform: translate(@x, @y);
 	transform: translate(@x, @y);
 }
 
