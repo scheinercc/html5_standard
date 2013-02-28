@@ -1,0 +1,155 @@
+.grid {
+	margin: 0 auto;
+	max-width: 75em;
+	width: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+.w320 {
+	max-width: 20em;
+}
+
+.w640 {
+	max-width: 40em;
+}
+
+.w960 {
+	max-width: 60em;
+}
+
+.row {
+	width: 100%;
+	margin-bottom: 1.25em;
+
+	.row {
+		width: auto;
+		margin: 0 -1.25em;
+	}
+}
+
+
+
+@gridColumns: 12;
+@gridColumnWidth: 8.333%;
+
+
+.columnW (@index) when (@index > 0) {
+	(~".c@{index}") { .c(@index); }
+	.columnW(@index - 1);
+}
+
+.columnW (0) {}
+
+.c (@columns) {
+	width: round(@gridColumnWidth * @columns, 2);
+}
+
+.columnW(@gridColumns);
+
+.c1,
+.c2,
+.c3,
+.c4,
+.c5,
+.c6,
+.c7,
+.c8,
+.c9,
+.c10,
+.c11,
+.c12 {
+	min-height: 1px;
+	float: left;
+	padding-left: 1.25em;
+	padding-right: 1.25em;
+	position: relative;
+}
+
+
+.offsetM (@index) when (@index > 0) {
+	(~".s@{index}") { .s(@index); }
+	.offsetM(@index - 1);
+}
+
+.offsetM (0) {}
+
+.s (@columns) {
+	margin-left: round(@gridColumnWidth * @columns, 2);
+}
+
+.offsetM(@gridColumns);
+
+.end {
+	float: right!important;
+}
+
+
+/* =Media query for 960 Screens - sets nested grids to 100%
+-------------------------------------------------------------- */
+@media only screen and (max-width: 60em) {
+
+	.row .row {
+		.c1,
+		.c2,
+		.c3,
+		.c4,
+		.c5,
+		.c6,
+		.c7,
+		.c8,
+		.c9,
+		.c10,
+		.c11,
+		.c12 {
+			width: 100%;
+			margin-bottom: 1.25em;
+		}
+
+		&> div:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+/* =Media query for iPad and tablets
+-------------------------------------------------------------- */
+@media handheld, only screen and (max-width: 48em), only screen and (max-device-width: 48em) and (orientation: portrait) {
+
+	body {
+		font-size: 90%;
+	}
+
+	.row {
+		margin-bottom: 0!important;
+	}
+
+	.c1,
+	.c2,
+	.c3,
+	.c4,
+	.c5,
+	.c6,
+	.c7,
+	.c8,
+	.c9,
+	.c10,
+	.c11,
+	.c12 {
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+		margin-bottom: 1.25em;
+	}
+}

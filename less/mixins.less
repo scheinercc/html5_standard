@@ -197,6 +197,17 @@
 	filter: ~"alpha(opacity = (@{opacityPercentage}))";
 }
 
+// @box-sizing
+// - no IE7 support (only via https://github.com/Schepp/box-sizing-polyfill)
+// - 'padding-box' (experimental) only supported by FF atm
+// ----------
+// w3c: Chrome 10, Opera 9.5, MSIE 8, Safari 5.1
+// -moz: FF -21
+.box-sizing(@box-type: border-box) {
+	-moz-box-sizing: @box-type;
+	box-sizing: @box-type;
+}
+
 // linear-gradient
 // ------------------
 // @w3c: http://www.w3.org/TR/css3-images/#linear-gradients
@@ -234,7 +245,7 @@
 
 // @transform
 // ------------
-// w3c: FF 16, Opera 12.5, MSIE 10
+// w3c: FF 16, Opera 12.1, MSIE 10
 // -webkit: Chrome -26; Safari -6
 // -ms: MSIE 9
 .rotation(@deg:5deg){
@@ -251,6 +262,16 @@
 	-webkit-transform: translate(@x, @y);
 	-ms-transform: translate(@x, @y);
 	transform: translate(@x, @y);
+}
+
+
+// animation
+// ------------
+// w3c: FF 16, Opera 12.1, MSIE 10
+// -webkit: Chrome -26; Safari -6
+.animation(@name, @duration: 4s, @timing-function: ease, @delay: 0s, @iteration-count: infinite, @direction: normal, @fill-mode: none) {
+	-webkit-animation: @name @duration @timing-function @delay @iteration-count @direction @fill-mode;
+	animation: @name @duration @timing-function @delay @iteration-count @direction @fill-mode;
 }
 
 
