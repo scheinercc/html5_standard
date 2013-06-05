@@ -122,10 +122,10 @@ textarea {
   font-family: inherit;
   font-size: 100%;
 }
-.ie7 button,
-.ie7 input,
-.ie7 select,
-.ie7 textarea {
+.lt-ie8 button,
+.lt-ie8 input,
+.lt-ie8 select,
+.lt-ie8 textarea {
   vertical-align: middle;
 }
 button,
@@ -152,8 +152,8 @@ input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
-.ie7 input[type="checkbox"],
-.ie7 input[type="radio"] {
+.lt-ie8 input[type="checkbox"],
+.lt-ie8 input[type="radio"] {
   height: 13px;
   width: 13px;
 }
