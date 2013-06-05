@@ -58,114 +58,6 @@
 
 
 
-
-// The Grid
-// from bootstrap: https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L546
-//-----------------------------------------------------
-
-#grid {
-
-	.core (@gridColumnWidth, @gridGutterWidth) {
-
-		.spanX (@index) when (@index > 0) {
-			(~".span@{index}") { .span(@index); }
-			.spanX(@index - 1);
-		}
-		.spanX (0) {}
-
-		.offsetX (@index) when (@index > 0) {
-			(~".offset@{index}") { .offset(@index); }
-			.offsetX(@index - 1);
-		}
-		.offsetX (0) {}
-
-		.offset (@columns) {
-			margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
-		}
-
-		.span (@columns) {
-			width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
-		}
-
-		.row {
-			margin-left: @gridGutterWidth * -1;
-			.clearfix();
-		}
-
-		[class*="span"] {
-			float: left;
-			margin-left: @gridGutterWidth;
-		}
-
-		// Set the container width, and override it for fixed navbars in media queries
-		.container,
-		.navbar-fixed-top .container,
-		.navbar-fixed-bottom .container { .span(@gridColumns); }
-
-		// generate .spanX and .offsetX
-		.spanX (@gridColumns);
-		.offsetX (@gridColumns);
-
-	}
-
-	.fluid (@fluidGridColumnWidth, @fluidGridGutterWidth) {
-
-		.spanX (@index) when (@index > 0) {
-			(~".span@{index}") { .span(@index); }
-			.spanX(@index - 1);
-		}
-		.spanX (0) {}
-
-		.span (@columns) {
-			width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
-			*width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
-		}
-
-		.row-fluid {
-			width: 100%;
-			.clearfix();
-			[class*="span"] {
-				.input-block-level();
-				float: left;
-				margin-left: @fluidGridGutterWidth;
-				*margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
-			}
-			[class*="span"]:first-child {
-				margin-left: 0;
-			}
-
-			// generate .spanX
-			.spanX (@gridColumns);
-		}
-
-	}
-
-	.input(@gridColumnWidth, @gridGutterWidth) {
-
-		.spanX (@index) when (@index > 0) {
-			(~"input.span@{index}, textarea.span@{index}, .uneditable-input.span@{index}") { .span(@index); }
-			.spanX(@index - 1);
-		}
-		.spanX (0) {}
-
-		.span(@columns) {
-			width: ((@gridColumnWidth) * @columns) + (@gridGutterWidth * (@columns - 1)) - 10;
-		}
-
-		input,
-		textarea,
-		.uneditable-input {
-			margin-left: 0; // override margin-left from core grid system
-		}
-
-		// generate .spanX
-		.spanX (@gridColumns);
-
-	}
-
-}
-
-
 //---------------------------------------------------
 //    Based on LESS Elements 0.6 by Dmitry Fadeyev
 //  ---------------------------------------------------
@@ -187,26 +79,57 @@
 
 
 
+// @placeholder
+// ----------
+.placeholder(@color: @placeholderText) {
+	&::-moz-placeholder {
+		color: @color;
+	}
+	&:-ms-input-placeholder {
+		color: @color;
+	}
+	&::-webkit-input-placeholder {
+		color: @color;
+	}
+	&::input-placeholder {
+		color: @color;
+	}
+}
+
+
+// Optional hyphenation
+// ----------
+.hyphens(@mode: auto) {
+	word-wrap: break-word;
+	-webkit-hyphens: @mode;
+	-moz-hyphens: @mode;
+	-ms-hyphens: @mode;
+	-o-hyphens: @mode;
+	hyphens: @mode;
+}
+
+
 // @opacity
 //   with IE6/7 and IE8 support
 // ----------
 .opacity (@opacity) {
 	@opacityPercentage: @opacity * 100;
 	opacity: @opacity;
-	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@{opacityPercentage}))";
 	filter: ~"alpha(opacity = (@{opacityPercentage}))";
 }
+
 
 // @box-sizing
 // - no IE7 support (only via https://github.com/Schepp/box-sizing-polyfill)
 // - 'padding-box' (experimental) only supported by FF atm
 // ----------
 // w3c: Chrome 10, Opera 9.5, MSIE 8, Safari 5.1
-// -moz: FF -21
+// -moz: FF -23
 .box-sizing(@box-type: border-box) {
 	-moz-box-sizing: @box-type;
 	box-sizing: @box-type;
 }
+
 
 // linear-gradient
 // ------------------
@@ -299,4 +222,141 @@
 	column-rule-color: @columnRuleColor;
 	column-rule-style: @columnRuleStyle;
 	column-rule-width: @columnRuleWidth;
+}
+
+
+
+
+// The Grid
+// from bootstrap: https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L546
+//-----------------------------------------------------
+
+#grid {
+
+	.core (@gridColumnWidth, @gridGutterWidth) {
+
+		.spanX (@index) when (@index > 0) {
+			.span@{index} { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX (0) {}
+
+		.offsetX (@index) when (@index > 0) {
+			.offset@{index} { .offset(@index); }
+			.offsetX(@index - 1);
+		}
+		.offsetX (0) {}
+
+		.offset (@columns) {
+			margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
+		}
+
+		.span (@columns) {
+			width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+		}
+
+		.row {
+			margin-left: @gridGutterWidth * -1;
+			.clearfix();
+		}
+
+		[class*="span"] {
+			float: left;
+			min-height: 1px; // prevent collapsing columns
+			margin-left: @gridGutterWidth;
+		}
+
+		// Set the container width, and override it for fixed navbars in media queries
+		.container,
+		.navbar-static-top .container,
+		.navbar-fixed-top .container,
+		.navbar-fixed-bottom .container { .span(@gridColumns); }
+
+		// generate .spanX and .offsetX
+		.spanX (@gridColumns);
+		.offsetX (@gridColumns);
+
+	}
+
+	.fluid (@fluidGridColumnWidth, @fluidGridGutterWidth) {
+
+		.spanX (@index) when (@index > 0) {
+			.span@{index} { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX (0) {}
+
+		.offsetX (@index) when (@index > 0) {
+			.offset@{index} { .offset(@index); }
+			.offset@{index}:first-child { .offsetFirstChild(@index); }
+			.offsetX(@index - 1);
+		}
+		.offsetX (0) {}
+
+		.offset (@columns) {
+			margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth*2);
+			*margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%) + (@fluidGridGutterWidth*2) - (.5 / @gridRowWidth * 100 * 1%);
+		}
+
+		.offsetFirstChild (@columns) {
+			margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) + (@fluidGridGutterWidth);
+			*margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%) + @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
+		}
+
+		.span (@columns) {
+			width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
+			*width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
+		}
+
+		.row-fluid {
+			width: 100%;
+			.clearfix();
+			[class*="span"] {
+				.input-block-level();
+				float: left;
+				margin-left: @fluidGridGutterWidth;
+				*margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
+			}
+			[class*="span"]:first-child {
+				margin-left: 0;
+			}
+
+			// Space grid-sized controls properly if multiple per line
+			.controls-row [class*="span"] + [class*="span"] {
+				margin-left: @fluidGridGutterWidth;
+			}
+
+			// generate .spanX and .offsetX
+			.spanX (@gridColumns);
+			.offsetX (@gridColumns);
+		}
+
+	}
+
+	.input(@gridColumnWidth, @gridGutterWidth) {
+
+		.spanX (@index) when (@index > 0) {
+			input.span@{index}, textarea.span@{index}, .uneditable-input.span@{index} { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX (0) {}
+
+		.span(@columns) {
+			width: ((@gridColumnWidth) * @columns) + (@gridGutterWidth * (@columns - 1)) - 14;
+		}
+
+		input,
+		textarea,
+		.uneditable-input {
+			margin-left: 0; // override margin-left from core grid system
+		}
+
+		// Space grid-sized controls properly if multiple per line
+		.controls-row [class*="span"] + [class*="span"] {
+			margin-left: @gridGutterWidth;
+		}
+
+		// generate .spanX
+		.spanX (@gridColumns);
+	}
 }
