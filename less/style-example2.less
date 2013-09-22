@@ -7,65 +7,79 @@
 @import "preset";
 
 
-//project specfic code
+// general
 //-------------------------------------
 html {
 	font: 14px/1.4em sans-serif;
 }
 
-// index page
-//-------------------------------------
+body {
+	background-color: #be2f33;
+}
 
-// example 1
-//-------------------------------------
-
-// generic classes
 a {
 	text-decoration: none;
 }
 
 blockquote {
+
 	&:before {
-		content: ('„');
+		content: '„';
 	}
+
 	&:after{
-		content: ('“');
+		content: '“';
 	}
 }
 
 
 // page setup
+//-------------------------------------
+
 .outer-wrapper {
 	width: 100%; // IE7
-}
-.inner-wrapper {
-	width: 940px;
-	margin: 0 auto;
-	position: relative;
-	overflow: hidden;
+	padding: 1em 0 0;
+
+	&> .row-fluid {
+		width: 940px;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+	}
 }
 
+
 // header
+//-------------------------------------
+
 .header {
 	padding: 20px 0 0;
-	background: #ff9400;
+	background: #099;
 }
+
 .main-nav {
-	margin-bottom: 20px;
+	//margin-bottom: 20px;
 }
+
 .main-nav-inner-item {
 	display: inline-block;
 	margin: 0 10px 0 0;
 }
-.lt-ie8 .main-nav-inner-item {
-	.ie7-inline-block;
+
+.lt-ie8 {
+
+	.main-nav-inner-item {
+		.ie7-inline-block;
+	}
 }
+
 .main-nav-inner-content {
 	display: block;
 	padding: 5px 10px;
 	line-height: 1em;
-	background: #ddd;
+	background: #a60000;
 	border-radius: 3px;
+	color: #fff;
 
 	&:hover {
 		background-color: #000;
@@ -73,13 +87,18 @@ blockquote {
 	}
 }
 
+
 // section content
+//-------------------------------------
+
 .main-section-1 {
-	background-color: #cef500;
+	background: url(../images/ticks.png);
 }
+
 .main-section-2 {
-	background-color: #ffd600;
+	background-color: #fff;
 }
+
 .aside {
 	padding: 10px 0 0;
 
@@ -88,9 +107,15 @@ blockquote {
 	}
 }
 
+
 // footer
-.footer .inner-wrapper {
-	padding: 10px;
-	border-top: 2px dashed #a60c00;
-	font-size: 85%;
+//-------------------------------------
+
+.footer {
+
+	.inner-wrapper {
+		padding: 10px;
+		border-top: 2px dashed #a60c00;
+		font-size: 85%;
+	}
 }

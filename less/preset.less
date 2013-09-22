@@ -13,16 +13,13 @@
 
 // Grid
 //-----------------------------------------------------
-/*--------------- grid ------------------- */
-
 
 // Fixed (940px)
-#grid > .core(@gridColumnWidth, @gridGutterWidth);
+// #grid > .core(@gridColumnWidth, @gridGutterWidth);
 
 // Fluid (940px)
 #grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth);
 
-/*----------------------------------------- */
 
 
 // Typography
@@ -122,11 +119,16 @@ blockquote {
 
 // Helper Classes
 //-----------------------------------------------------
-
-//.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
-//.ir br { display: none; }
-//.ie-lt8 .ir {  line-height: 0; }
-
+.hide-text {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+.hide-text br {
+	display: none;
+}
 //.hidden { display: none !important; visibility: hidden; }
 //.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 //.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
